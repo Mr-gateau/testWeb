@@ -31,7 +31,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/getSource", source);
+app.get("/test", (req, res) => {
+  res.status(200).send("ok");
+});
 
-app.listen(port, (res, req) => {
+app.listen(port, (req, res) => {
   console.log("We are here => " + port);
 });
