@@ -29,7 +29,9 @@ const source = require("./Routes/sources");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use("/", (req, res) => {
+  res.status(200).send("bonjour");
+});
 app.use("/getSource", source);
 app.get("/test", (req, res) => {
   res.status(200).send("ok");
